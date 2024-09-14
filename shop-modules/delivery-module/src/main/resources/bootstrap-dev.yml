@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        namespace: fc19a688-a4e0-4737-bb4d-bb0cb2545f3b
+        server-addr: 192.168.120.149:8848
+        file-extension: yml
+      discovery:
+        namespace: fc19a688-a4e0-4737-bb4d-bb0cb2545f3b
+        server-addr: 192.168.120.149:8848

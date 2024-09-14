@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hmx.kafka.mapper.OutboxMapper">
+
+    <resultMap id="outBoxMap" type="com.hmx.kafka.domain.Outbox">
+        <result column="event_body" property="eventBody" />
+        <result column="topic_name" property="topicName" />
+    </resultMap>
+
+
+    <select id="selectBox" parameterType="com.hmx.kafka.domain.Outbox" resultMap="outBoxMap">
+        select id ,uuid, event_body, topic_name
+        from outbox
+        <where>
+            <if test="id!=null and id != ''">and id = #{id} </if>
+            <if test="uuid!=null and uuid != ''">and uuid = #{uuid} </if>
+        </where>
+    </select>
+
+    <delete id="deleteBox" parameterType="Long">
+        delete from outbox where id  in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <delete id="deleteBoxOnce" parameterType="Long">
+        delete from outbox where id = #{id}
+    </delete>
+
+    <insert id="insertBox" keyColumn="id" useGeneratedKeys="true">
+        insert into outbox(uuid, topic_name, event_body)
+        values (#{uuid}, #{topicName}, #{eventBody})
+    </insert>
+
+
+    <select id="selectBoxByUUid" resultMap="outBoxMap" parameterType="String">
+        select id ,uuid, event_body, topic_name
+        from outbox
+        where uuid = #{uuid}
+    </select>
+
+
+
+</mapper>

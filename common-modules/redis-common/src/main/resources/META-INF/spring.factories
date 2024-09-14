@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration= \
+  com.hmx.redis.config.RedisMallConfig, \
+  com.hmx.redis.service.RedisService

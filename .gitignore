@@ -1,0 +1,5 @@
+/.idea
+*.class
+target/*
+/common-modules/es-common/target
+/**/target

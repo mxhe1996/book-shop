@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+  com.hmx.es.conf.ElasticConfigure, \
+  com.hmx.es.service.ElasticService, \
+  com.hmx.es.conf.properties.ElasticProperties

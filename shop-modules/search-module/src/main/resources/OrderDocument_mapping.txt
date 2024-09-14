@@ -1,0 +1,131 @@
+PUT order
+{
+  "mappings": {
+      "properties": {
+        "createTime": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "indexName": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "itemsList": {
+          "properties": {
+            "itemId": {
+              "type": "long"
+            },
+            "itemName": {
+              "type": "text",
+              "analyzer": "ik_smart",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "orderNumber": {
+              "type": "long"
+            },
+            "price": {
+              "type": "long"
+            },
+            "tenantId": {
+              "type": "long"
+            },
+            "tenantName": {
+              "type": "text",
+              "analyzer": "ik_smart",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "money": {
+          "type": "long"
+        },
+        "objectId": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "orderId": {
+          "type": "long"
+        },
+        "orderNo": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "orderStatus": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "updateTime": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "userId": {
+          "type": "long"
+        },
+        "userName": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "deliveryNo":{
+          "type":"text"
+        },
+        "deliveryId":{
+          "type": "text"
+        },
+        "deliveryPhases":{
+          "properties": {
+            "comment":{
+              "type":"text"
+            },
+            "phaseTime":{
+              "type":"text"
+            }
+          }
+        }
+      }
+    }
+}

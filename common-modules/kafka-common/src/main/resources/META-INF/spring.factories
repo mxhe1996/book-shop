@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = \
+  com.hmx.kafka.config.properties.KafkaProperties, \
+  com.hmx.kafka.config.KafkaConfigure, \
+  com.hmx.kafka.config.KafkaDynamicGenerateFactory, \
+  com.hmx.kafka.service.KafkaService
